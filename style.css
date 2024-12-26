@@ -6,4 +6,25 @@
 
 body {
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas {
+    flex: 0 1 40%;
+    min-width: 280px;
+    aspect-ratio: 1 / 1;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    aspect-ratio: 1 / 1;
+    border: 1px solid black;
+}
+
+button {
+    display: block;
 }

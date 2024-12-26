@@ -7,6 +7,12 @@
         <script defer src="./script.js"></script>
     </head>
     <body>
-        <div class="canvas">A</div>
+        <div class="settings">
+            <label for="grid-dimension">Grid</label>
+            <input type="range" name="grid-dimension" id="grid-dimension" min="1" max="120" value="16" step="1">
+            <span>16</span>
+            <button id="btn-grid-dimension">Apply grid dimension</button>
+        </div>
+        <div class="canvas"></div>
     </body>
 </html>
