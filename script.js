@@ -1,3 +1,4 @@
+// UI references
 const canvas = document.querySelector(".canvas");
 const rangeInputGrid = document.querySelector("#grid-dimension");
 const spanGrid = document.querySelector("span");
@@ -7,31 +8,45 @@ rangeInputGrid.addEventListener("input", () => {
     spanGrid.textContent = rangeInputGrid.value; 
 });
 
-btnGrid.addEventListener("click", createGrid);
+btnGrid.addEventListener("click", createNewGrid);
 
-function createGrid() {
+function createNewGrid() {
     canvas.replaceChildren();
 
-    let gridTotalTiles = rangeInputGrid.value * rangeInputGrid.value;
+    const gridTotalTiles = rangeInputGrid.value * rangeInputGrid.value;
 
     for(let i = 0; i < gridTotalTiles; i++) {
-        let square = document.createElement("div");
-        square.style.width = `${100 / rangeInputGrid.value}%`;
-        square.classList.add("tile");
-        canvas.appendChild(square);
+        let tile = document.createElement("div");
+        tile.style.width = `${100 / rangeInputGrid.value}%`;
+        tile.classList.add("tile");
+        canvas.appendChild(tile);
     }
 }
 
-createGrid();
+let isPainting = false;
 
-
-
-
-
-canvas.addEventListener("mouseover", (event) => {
-    event.target.style.backgroundColor = "black";
-    event.target.style.opacity = `${+event.target.style.opacity + 0.1}`;
-    console.log(event.target.style.opacity);
+canvas.addEventListener("mousedown", (event) => {
+    event.preventDefault();
+    isPainting = true;
+    paintBlackTile(event);
 });
 
+canvas.addEventListener("mouseover", (event) => {
+    if(isPainting) {
+        paintBlackTile(event);
+    }
+});
 
+canvas.addEventListener("mouseup", () => {
+    isPainting = false;
+})
+
+function paintBlackTile(event) {
+    let target = event.target;
+    if(target.style.opacity < 1) {
+        target.style.backgroundColor = "black";
+        event.target.style.opacity = +target.style.opacity + 0.1;
+    }
+}
+
+createNewGrid();
