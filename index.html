@@ -5,6 +5,7 @@
         <title>Time to Sketch!</title>
         <link rel="stylesheet" href="./style.css">
         <script defer src="./script.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     </head>
     <body>
         <div class="settings">
@@ -12,6 +13,7 @@
             <input type="range" name="grid-dimension" id="grid-dimension" min="1" max="120" value="16" step="1">
             <span>16</span>
             <button id="btn-grid-dimension">Apply grid dimension</button>
+            <button id="btn-pic-download">Download</button>
         </div>
         <div class="canvas"></div>
     </body>

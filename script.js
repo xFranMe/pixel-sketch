@@ -50,3 +50,15 @@ function paintBlackTile(event) {
 }
 
 createNewGrid();
+
+// Download
+const btnPicDownload = document.querySelector("#btn-pic-download");
+
+btnPicDownload.addEventListener("click", () => {
+    html2canvas(canvas).then(newCanvas => {
+        const link = document.createElement("a");
+        link.download = "my-drawing.png";
+        link.href = newCanvas.toDataURL();
+        link.click();
+    });
+});
