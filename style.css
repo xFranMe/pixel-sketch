@@ -9,6 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2em;
 }
 
 .canvas {
@@ -26,4 +27,10 @@ body {
 
 button {
     display: block;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }

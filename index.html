@@ -9,10 +9,26 @@
     </head>
     <body>
         <div class="settings">
-            <label for="grid-dimension">Grid</label>
-            <input type="range" name="grid-dimension" id="grid-dimension" min="1" max="120" value="16" step="1">
-            <span>16</span>
-            <button id="btn-grid-dimension">Apply grid dimension</button>
+            <div class="mode-selection">
+                <label>Etch-a-Sketch</label>
+                <input type="radio" name="mode" id="sketch" value="sketch" checked>
+                <label>Pixel Art</label>
+                <input type="radio" name="mode" id="pixel-art" value="pixel-art">
+            </div>
+            <div>
+                <label for="grid-dimension">Grid</label>
+                <input type="range" name="grid-dimension" id="grid-dimension" min="1" max="120" value="16" step="1">
+                <span>16</span>
+                <button id="btn-grid-dimension">Apply grid dimension</button>
+            </div>
+            <div class="color-picker">
+                <label for="selected-color">Pick a color</label>
+                <input type="color" id="selected-color" name="selected-color" value="#ff0000">
+            </div>
+            <div class="erase">
+                <label for="eraser">Erase</label>
+                <input type="checkbox" id="eraser" name="eraser" value="erase">
+            </div>
             <button id="btn-pic-download">Download</button>
         </div>
         <div class="canvas"></div>
