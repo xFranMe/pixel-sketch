@@ -24,12 +24,12 @@
                 </fieldset>
                 <fieldset>
                     <legend>Canvas settings</legend>
-                    <div class="option">
-                        <label for="grid-dimension">Grid size</label>
+                    <div class="option" id="size-selector">
+                        <label for="grid-dimension">Size</label>
                         <input type="range" name="grid-dimension" id="grid-dimension" min="1" max="120" value="16" step="1">
                         <span>16</span>
                     </div>
-                    <button id="btn-grid-dimension">Apply grid dimension</button>
+                    <button id="btn-grid-dimension">Apply</button>
                 </fieldset>
                 <fieldset class="erase">
                     <legend>Drawing tools</legend>
@@ -37,12 +37,12 @@
                         <label for="eraser">Eraser</label>
                         <input type="checkbox" id="eraser" name="eraser" value="erase">
                     </div>
-                    <div class="option">
+                    <div class="option" id="color-option">
                         <label for="selected-color">Color</label>
                         <input type="color" id="selected-color" name="selected-color" value="#ff0000">
                     </div>
                 </fieldset>
-                <button id="btn-pic-download">Download your Sketch!</button>
+                <button id="btn-pic-download">&#11015; Download your Sketch!</button>
             </div>
         </div>
         <div class="main-panel">

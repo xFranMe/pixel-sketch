@@ -5,6 +5,7 @@ const spanGrid = document.querySelector("span");
 const btnGrid = document.querySelector("#btn-grid-dimension");
 const modes = document.querySelectorAll("input[name = 'mode']");
 const selectedColor = document.querySelector("#selected-color");
+const colorOption = document.querySelector("#color-option");
 const erase = document.querySelector("#eraser");
 let selectedMode = null;
 
@@ -19,6 +20,11 @@ modes.forEach(mode => {
         if(result) { 
             selectedMode = mode.value;
             createNewGrid();
+            if(selectedMode !== "pixel-art") {
+                colorOption.style.display = "none";
+            } else {
+                colorOption.style.display = "block";
+            }
         }
         else { 
             modes.forEach(mode => {
