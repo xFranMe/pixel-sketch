@@ -8,29 +8,45 @@
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     </head>
     <body>
-        <div class="settings">
-            <div class="mode-selection">
-                <label>Etch-a-Sketch</label>
-                <input type="radio" name="mode" id="sketch" value="sketch" checked>
-                <label>Pixel Art</label>
-                <input type="radio" name="mode" id="pixel-art" value="pixel-art">
+        <div class="sidebar">
+            <h1>PixelSketch</h1>
+            <div class="options-container">
+                <fieldset class="mode-selection">
+                    <legend>Painting mode</legend>
+                    <div class="option">
+                        <input type="radio" name="mode" id="sketch" value="sketch" checked>
+                    <label>Etch-a-Sketch</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="mode" id="pixel-art" value="pixel-art">
+                        <label>Pixel Art</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Canvas settings</legend>
+                    <div class="option">
+                        <label for="grid-dimension">Grid size</label>
+                        <input type="range" name="grid-dimension" id="grid-dimension" min="1" max="120" value="16" step="1">
+                        <span>16</span>
+                    </div>
+                    <button id="btn-grid-dimension">Apply grid dimension</button>
+                </fieldset>
+                <fieldset class="erase">
+                    <legend>Drawing tools</legend>
+                    <div class="option">
+                        <label for="eraser">Eraser</label>
+                        <input type="checkbox" id="eraser" name="eraser" value="erase">
+                    </div>
+                    <div class="option">
+                        <label for="selected-color">Color</label>
+                        <input type="color" id="selected-color" name="selected-color" value="#ff0000">
+                    </div>
+                </fieldset>
+                <button id="btn-pic-download">Download your Sketch!</button>
             </div>
-            <div>
-                <label for="grid-dimension">Grid</label>
-                <input type="range" name="grid-dimension" id="grid-dimension" min="1" max="120" value="16" step="1">
-                <span>16</span>
-                <button id="btn-grid-dimension">Apply grid dimension</button>
-            </div>
-            <div class="color-picker">
-                <label for="selected-color">Pick a color</label>
-                <input type="color" id="selected-color" name="selected-color" value="#ff0000">
-            </div>
-            <div class="erase">
-                <label for="eraser">Erase</label>
-                <input type="checkbox" id="eraser" name="eraser" value="erase">
-            </div>
-            <button id="btn-pic-download">Download</button>
         </div>
-        <div class="canvas"></div>
+        <div class="main-panel">
+            <div class="canvas"></div>
+        </div>
     </body>
 </html>

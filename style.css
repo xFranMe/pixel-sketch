@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Rampart+One&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -5,32 +7,84 @@
 }
 
 body {
+    font-family: "Lexend", serif;
     min-height: 100vh;
+    display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+    min-width: 320px;
+    background-color: #e63946;
+    padding: 0 1.5em;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #1d3557;
+}
+
+h1 {
+    font-family: "Rampart One", serif;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.options-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+fieldset {
+    background-color: #f1faee;
+    padding: 1em;
+    border-radius: 15px;
+    border: 2px solid #1d3557;
+}
+
+legend {
+    background-color: #a8dadc;
+    padding: 0.5em;
+    border: inherit;
+    border-radius: inherit;
+    font-weight: 700;
+}
+
+button {
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+#btn-grid-dimension {
+    display: inline-block;
+}
+
+#btn-pic-download {
+    padding: 1em 0;
+    border-radius: 15px;
+}
+
+/* MAIN PANEL */
+.main-panel {
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2em;
+    background-color: #f1faee;
 }
 
 .canvas {
-    flex: 0 1 40%;
+    flex: 0 1 52%;
     min-width: 280px;
     background-color: white;
     display: flex;
     flex-wrap: wrap;
+    border: 2px solid #1d3557;
 }
 
 .tile {
     aspect-ratio: 1 / 1;
     border: 1px solid black;
-}
-
-button {
-    display: block;
-}
-
-.settings {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
 }
