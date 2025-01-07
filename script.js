@@ -60,14 +60,14 @@ let isPainting = false;
 canvas.addEventListener("mousedown", (event) => {
     event.preventDefault();
     isPainting = true;
-    if(erase.checked) { eraseTile(event) }
-    else {paintTile(event);}
+    if(erase.checked) { eraseTile(event); }
+    else { paintTile(event); }
 });
 
 canvas.addEventListener("mouseover", (event) => {
     if(isPainting) {
-        if(erase.checked) { eraseTile(event) }
-        else {paintTile(event);}
+        if(erase.checked) { eraseTile(event); }
+        else { paintTile(event); }
     }
 });
 
